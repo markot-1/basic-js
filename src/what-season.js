@@ -13,7 +13,7 @@ const { NotImplementedError } = require('../extensions/index.js');
  */
 function getSeason(date) {
   if (date) {
-    if (date instanceof Date) {
+    if (date instanceof Date && !date.hasOwnProperty("toString")) {
       let month = date.getMonth();
       if (month <= 1 || month == 11) {
         return 'winter';
